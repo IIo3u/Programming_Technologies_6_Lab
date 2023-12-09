@@ -51,13 +51,29 @@ int main()
 	cout << "Enter data for A array:" << endl;
 	for (int i = 0; i < 10; i++) 
 	{
+	ITERA:
 		cin >> A[i];
+		if (!cin)
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Wrong data, try else." << endl;
+			goto ITERA;
+		}
 	}
 
 	cout << "Enter data for B array:" << endl;
 	for (int i = 0; i < 15; i++)
 	{
+	ITERB:
 		cin >> B[i];
+		if (!cin)
+		{
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Wrong data, try else." << endl;
+			goto ITERB;
+		}
 	}
 	cout << endl;
 
